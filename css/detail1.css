@@ -1,0 +1,72 @@
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden;
+  }
+.close-btn {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  z-index: 1000;
+}
+
+.close-btn img {
+  width: 25px;
+  height: 25px;
+}
+
+  .section {
+    min-height: 60vh; /* 👈 Adjusted for smaller scroll */
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .text-box {
+    background-color: turquoise;
+    padding: 15px;
+    border-radius: 5px;
+    width: 100%;
+  }
+
+  h3 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  p {
+    margin-bottom: 0;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 0;
+  }
+
+  /* ✅ Mobile layout adjustment */
+  @media (max-width: 767.98px) {
+    .section {
+      flex-direction: column;
+    }
+
+    .text-box {
+      margin-top: 10px;
+    }
+  }
+  .text-box {
+  margin-bottom: 190px;  /* 👈 Adjust as you like (10px, 20px, etc.) */
+}
+  .img1 {
+    height: 30px;
+    width: 30px; 
+    margin-left: 97%;
+    display: block;
+  
+}

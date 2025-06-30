@@ -1,0 +1,478 @@
+.whatsapp_float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 100;
+  cursor: pointer;
+}
+
+.whatsapp_float img {
+  width: 60px;
+  height: 60px;
+}
+.whatsapp_box {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  width: 250px;
+  background: #25D366;
+  color: #fff;
+  border-radius: 10px;
+  padding: 10px;
+  display: none;
+  z-index: 101;
+}
+.whatsapp_box input {
+  width: 100%;
+  margin-bottom: 5px;
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+}
+.whatsapp_box button {
+  width: 100%;
+  background: #075E54;
+  color: #fff;
+  border: none;
+  padding: 6px;
+  border-radius: 5px;
+}
+
+body {
+  background-color: #f8f9fa;
+}
+
+.contact-left {
+  background-color: #0d3b66;
+  color: #fff;
+  padding: 30px;
+  height: 100%;
+}
+
+.contact-left h3 {
+  margin-bottom: 20px;
+}
+
+.contact-info {
+  margin-bottom: 20px;
+}
+
+.contact-info i {
+  margin-right: 8px;
+}
+
+.contact-right {
+  background-color: #eaeaea;
+  padding: 30px;
+}
+
+.form-control {
+  margin-bottom: 15px;
+}
+
+.captcha {
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.btn-submit {
+  background-color: #0d3b66;
+  color: #fff;
+  border: none;
+}
+.contact-left {
+  background-color: #0d3b66;
+  color: #fff;
+  padding: 60px 30px;   /* ⬅️ Top & Bottom = 60px → Equal gaps */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  /* ⬅️ Content center aligned vertically */
+}
+
+.contact-left h3 {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.contact-info {
+  margin-bottom: 20px;
+}
+    .contact-left {
+  background-color: #0d3b66;
+  color: #fff;
+  padding: 60px 30px;
+  height: 100vh;               /* Full screen height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contact-left h3 {
+  margin-bottom: 40px;        /* Heading ke neeche ka acha gap */
+  text-align: center;
+  font-size: 28px;
+}
+
+.contact-info {
+  margin-bottom: 25px;        /* ✅ Har text block ke neeche clean equal gap */
+  font-size: 18px;            /* ✅ Thoda bada text for readability */
+  line-height: 1.6;           /* ✅ Har line ki height bhi relax → clean design */
+}
+
+.contact-info:last-child {
+  margin-bottom: 0;           /* ✅ Last line ka neeche ka gap remove (acha lage) */
+}
+
+.contact-info i {
+  margin-right: 8px;
+  color: #ffc107;             /* ✅ Icons ko yellowish → thoda eye-catching */
+}
+body {
+  background-color: #f8f9fa;
+}
+
+/* ✅ Navbar spacing */
+.navbar-nav .nav-link {
+  margin-right: 20px;
+}
+.navbar-nav .nav-link:last-child {
+  margin-right: 0;
+}
+.navbar-nav .nav-link.active {
+  color: #ffc107 !important;
+}
+
+/* ✅ About Card Styles */
+.about-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.about-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.card-img-top {
+  height: 250px;
+  object-fit: cover;
+}
+
+.btn-details {
+  background-color: #0d3b66;
+  color: #fff;
+  border: none;
+}
+
+.btn-details:hover {
+  background-color: #092d4f;
+}
+body {
+  background-color: #f8f9fa;
+}
+
+/* ✅ Navbar Styling */
+.navbar-nav .nav-link {
+  margin-right: 20px;
+}
+.navbar-nav .nav-link:last-child {
+  margin-right: 0;
+}
+.navbar-nav .nav-link.active {
+  color: #ffc107 !important;
+}
+
+/* ✅ Card Styling */
+.about-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.card-img-top {
+  height: 250px;
+  object-fit: cover;
+}
+
+.btn-details {
+  background-color: #0d3b66;
+  color: #fff;
+  border: none;
+}
+
+.btn-details:hover {
+  background-color: #092d4f;
+}
+/* ✅ General Styling */
+body, html {
+  height: 100%;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.carousel-item img {
+  height: 100vh;
+  object-fit: cover;
+  filter: brightness(0.5  );
+  
+}
+
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  text-align: center;
+  z-index: 10;
+}
+
+/* ✅ WhatsApp Floating Icon Styles */
+.whatsapp_float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 20;
+  cursor: pointer;
+}
+.whatsapp_float img {
+  width: 60px;
+  height: 60px;
+}
+
+.whatsapp_box {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  width: 250px;
+  background: #25D366;
+  color: #fff;
+  border-radius: 10px;
+  padding: 10px;
+  display: none;
+  z-index: 21;
+}
+.whatsapp_box input {
+  width: 100%;
+  margin-bottom: 5px;
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+}
+.whatsapp_box button {
+  width: 100%;
+  background: #075E54;
+  color: #fff;
+  border: none;
+  padding: 6px;
+  border-radius: 5px;
+}
+
+/* ✅ Navbar Link Active Color */
+.navbar-nav .nav-link.active {
+  color: #ffc107 !important;
+}
+
+  .custom-navbar {
+    background-color: gray !important;  /* Black color */
+    max-width: 100%;                     /* Reduce width to 90%, adjust as you like */
+    margin: 0 auto;                     /* Center horizontally */
+    border-radius: 30px;                /* Rounded edges (optional) */
+    padding: 5px 50px;                  /* Optional padding */
+}
+
+body {
+        background-color: #f8f9fa;
+      }
+
+      .navbar {
+        margin-bottom: 0;
+      }
+
+      .contact-left {
+        background-color: #0d3b66;
+        color: #fff;
+        padding: 60px 30px;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .contact-left h3 {
+        margin-bottom: 40px;
+        text-align: center;
+        font-size: 28px;
+      }
+
+      .contact-info {
+        margin-bottom: 25px;
+        font-size: 18px;
+        line-height: 1.6;
+      }
+
+      .contact-info i {
+        margin-right: 8px;
+        color: #ffc107;
+      }
+
+      .contact-info:last-child {
+        margin-bottom: 0;
+      }
+
+      .contact-right {
+        background-color: #eaeaea;
+        padding: 40px;
+      }
+
+      .form-control {
+        margin-bottom: 15px;
+      }
+
+      .captcha {
+        font-weight: bold;
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+
+      .btn-submit {
+        background-color: #0d3b66;
+        color: #fff;
+        border: none;
+      }
+
+      .btn-submit:hover {
+        background-color: #092d4f;
+      }
+
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    70% { opacity: 0.4; }
+  }
+  .footer {
+    
+  font-size: 14px;
+  background-color: #111;
+  color: #ccc;
+}
+
+.footer h6 {
+  font-weight: 600;
+  color: #00bcd4;
+}
+
+.footer p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.footer i {
+  color: #00bcd4;
+}
+
+    body {
+      padding-top: 80px; /* to make space for fixed-top navbar */
+    }
+    .card-img-top {
+      height: 200px;
+      object-fit: cover;
+    }
+    .btn-details {
+      background-color: #007bff;
+      color: white;
+    }
+  
+
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .car-section {
+      height: 400px; /* ✅ Fixed height */
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 60px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .car-image-side {
+      flex: 0 0 40%;
+      background-color: #f8f9fa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+
+    .car-image-side img {
+      height: 90%;
+      width: auto;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .car-text-side {
+      flex: 0 0 60%;
+      padding: 30px;
+      overflow-y: auto;
+      height: 100%;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      z-index: 1000;
+    }
+
+    .close-btn img {
+      width: 30px;
+      cursor: pointer;
+    }
+.car-image-side {
+  flex: 0 0 40%;
+  background-color: #f8f9fa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  overflow: hidden; /* 🔒 Prevent overflow */
+}
+
+.car-image-side img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover; /* ✅ Crop image to fit box */
+  border-radius: 8px;
+}
+
+    @media (max-width: 768px) {
+      .car-section {
+        flex-direction: column;
+        height: auto;
+      }
+
+      .car-image-side, .car-text-side {
+        flex: 0 0 100%;
+        height: auto;
+      }
+
+      .car-image-side img {
+        width: 100%;
+        height: auto;
+      }
+    }

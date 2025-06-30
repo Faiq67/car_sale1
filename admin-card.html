@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin - Add Cards</title>
+  <link rel="icon" href="images/bg22.png" type="image/png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database-compat.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/detail1.css">
+</head>
+<body class="bg-light">
+       <a href="dashboard.html" class="close-btn">
+  <img src="images/left-arrow-28.png" alt="Close">
+</a>
+  <div class="container py-4">
+    <h2 class="mb-4">🛠️ Admin - Add Feature Card</h2>
+
+    <div class="row g-3 mb-3">
+      <div class="col-md-4">
+        <input type="text" id="cardTitle" class="form-control" placeholder="Enter Title">
+      </div>
+      <div class="col-md-4">
+        <input type="text" id="cardText" class="form-control" placeholder="Enter Description">
+      </div>
+      <div class="col-md-4">
+        <input type="file" id="cardImage" class="form-control" accept="image/*">
+      </div>
+    </div>
+    <button onclick="addCard()" class="btn btn-success">➕ Add Card</button>
+
+    <p id="status" class="mt-3 text-primary"></p>
+  </div>
+
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyDGumCzKxsCKOKXwzgwjtHWYzmxZt78y8I",
+      authDomain: "car-sale-contact.firebaseapp.com",
+      databaseURL: "https://car-sale-contact-default-rtdb.firebaseio.com",
+      projectId: "car-sale-contact",
+      storageBucket: "car-sale-contact.appspot.com",
+      messagingSenderId: "252895320993",
+      appId: "1:252895320993:web:abc123"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.database();
+
+    function addCard() {
+      const title = document.getElementById("cardTitle").value.trim();
+      const text = document.getElementById("cardText").value.trim();
+      const imageFile = document.getElementById("cardImage").files[0];
+      const statusEl = document.getElementById("status");
+
+      if (!title || !text || !imageFile) {
+        alert("❗ Please fill all fields and select an image.");
+        return;
+      }
+
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        const imageBase64 = e.target.result;
+
+        const newCard = {
+          title: title,
+          text: text,
+          image: imageBase64,
+          time: new Date().toISOString()
+        };
+
+        db.ref("cards").push(newCard)
+          .then(() => {
+            statusEl.textContent = "✅ Card added successfully!";
+            document.getElementById("cardTitle").value = "";
+            document.getElementById("cardText").value = "";
+            document.getElementById("cardImage").value = "";
+          })
+          .catch(err => {
+            console.error(err);
+            statusEl.textContent = "❌ Error saving card.";
+          });
+      };
+      reader.readAsDataURL(imageFile);
+    }
+  </script>
+</body>
+</html>

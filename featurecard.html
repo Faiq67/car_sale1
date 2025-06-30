@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Feature Cards Admin</title>
+  <link rel="icon" href="images/bg22.png" type="image/png">
+  
+  <!-- Bootstrap CSS (Only one latest version included) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"/>
+  
+  <!-- Your Custom CSS -->
+  <link rel="stylesheet" href="css/detail1.css">
+
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js"></script>
+
+  <!-- ✅ Custom inline style to fix image height -->
+  <style>
+    td img {
+      height: 60px;
+      width: auto;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+
+    .close-btn img {
+      width: 30px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container mt-5">
+  <a href="dashboard.html" class="close-btn d-block mb-3">
+    <img src="images/left-arrow-28.png" alt="Back">
+  </a>
+  <h2 class="mb-4">📋 Feature Cards</h2>
+
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped" id="cardTable">
+      <thead class="table-dark">
+        <tr>
+          <th>Image</th>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Date & Time</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody id="cardTableBody">
+        <!-- Cards will be appended here -->
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ✅ Firebase Script -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
+  import { getDatabase, ref, onValue, remove } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-database.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyDGumCzKxsCKOKXwzgwjtHWYzmxZt78y8I",
+    authDomain: "car-sale-contact.firebaseapp.com",
+    databaseURL: "https://car-sale-contact-default-rtdb.firebaseio.com",
+    projectId: "car-sale-contact",
+    storageBucket: "car-sale-contact.appspot.com",
+    messagingSenderId: "252895320993",
+    appId: "1:252895320993:web:xyz1234567890"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getDatabase(app);
+
+  const cardRef = ref(db, 'cards');
+  const cardTableBody = document.getElementById('cardTableBody');
+
+  // ✅ Fetch and Display Cards
+  onValue(cardRef, (snapshot) => {
+    cardTableBody.innerHTML = "";
+    const data = snapshot.val();
+
+    if (data) {
+      Object.entries(data).forEach(([key, card]) => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+          <td><img src="${card.image}" alt="Card Image" /></td>
+          <td>${card.title}</td>
+          <td>${card.text}</td>
+          <td>${new Date(card.time).toLocaleString()}</td>
+          <td><button class="btn btn-danger btn-sm" onclick="deleteCard('${key}')">Delete</button></td>
+        `;
+        cardTableBody.appendChild(row);
+      });
+    } else {
+      cardTableBody.innerHTML = `<tr><td colspan="5" class="text-center">No cards found</td></tr>`;
+    }
+  });
+
+  // ✅ Delete Card
+  window.deleteCard = function (key) {
+    if (confirm("Are you sure you want to delete this card?")) {
+      remove(ref(db, 'cards/' + key));
+    }
+  };
+</script>
+
+<!-- Optional Admin JS -->
+<script src="js/admin.js"></script>
+</body>
+</html>
